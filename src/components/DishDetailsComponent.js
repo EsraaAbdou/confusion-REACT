@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Card, CardTitle, CardText, CardBody, CardImg } from 'reactstrap';
+
 class Dish extends Component {
     formatDate(date){
         const dateStr=new Date(date).toDateString().split(' ').slice(1);
         return(dateStr[0] + " " + dateStr[1]+", " + dateStr[2]); 
+        // return new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(date)));
     }
     renderComments(commentsArr){
         if(commentsArr) { 
@@ -53,7 +55,7 @@ class Dish extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="container">
                 {this.renderDish()}
             </div>
         );
