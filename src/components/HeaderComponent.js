@@ -28,10 +28,10 @@ class Header extends Component {
     }
 
     handleLogin(event) {
+        event.preventDefault();
         this.toggleModal();
         alert("Username: " + this.username.value + " Password: " + this.password.value
             + " Remember: " + this.remember.checked);
-        event.preventDefault();
     }
 
     render() {
